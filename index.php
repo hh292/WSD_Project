@@ -1,7 +1,6 @@
 <?php
-/* **********************************WSD Active Record Assignment"********************************
-***********************************Created By: Himanshu Hunge UCID: hh292 *********************************** 
-********************************** New Jersey Institute Of Technology ************************************** */
+
+
 define('DATABASE', 'hh292');
 define('USERNAME', 'hh292');
 define('PASSWORD', 'ic2BQ414k');
