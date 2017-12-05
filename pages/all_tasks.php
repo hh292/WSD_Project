@@ -19,6 +19,7 @@
 
 <?php
 //this is how you print something
+//print_r($data);
 print utility\htmlTable::genarateTableFromMultiArray($data);
 ?>
 
