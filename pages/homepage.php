@@ -12,8 +12,8 @@
     <div class="login">
       <h1>Login to Web Application</h1>
       <form method="post" action="index.php?page=accounts&action=login">
-        <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
+        <p><input type="text" name="login" value="" placeholder="Email"></p>
+        <p><input type="password" name="psw" value="" placeholder="Password"></p>
         <p class="remember_me">
           <label>
             <input type="checkbox" name="remember_me" id="remember_me">
@@ -23,10 +23,30 @@
         <p class="submit"><input type="submit" name="commit" value="Login"></p>
       </form>
     </div>
+
 <!-- <form action="index.php?page=accounts&action=signup" method="POST"> -->
     <div class="login-help">
-      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+
+       <form action="index.php?page=accounts&action=signup" method="POST">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Tasks.com</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><font color="white">Not a member yet?</font><span class="glyphicon glyphicon-user"></span><button class="btn btn-link navbar-btn" type="submit">Signup</button></li>
+        </ul>
     </div>
+</nav>
+</form>
+
+
+    <!--  <h1><a href="index.php?page=accounts&action=signup">Register</a></h1>
+   <!--   <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p> -->
+    </div> 
   </section>
 
   <section class="about">
