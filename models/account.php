@@ -24,6 +24,18 @@ final class account extends \database\model
         return $records;
     }
     //add a method to compare the passwords this is where bcrypt should be done and it should return TRUE / FALSE for login
-    public static function checkPassword($password) {}
+    public function setPassword($password) {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        return $password;
+    }
+    public function checkPassword($password) {
+        $checkpsw = password_verify($password, $this->password);
+        print_r($checkpsw);
+        return $checkpsw;
+    }
 }
 ?>
+
+
+
+
