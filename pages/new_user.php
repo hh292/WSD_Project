@@ -1,55 +1,104 @@
-<!doctype html>
-
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html>
+  <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Material Admin by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="favicon.png">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="page login-page">
+      <div class="container d-flex align-items-center">
+        <div class="form-holder has-shadow">
+          <div class="row">
+            <!-- Logo & Information Panel-->
+            <div class="col-lg-6">
+              <div class="info d-flex align-items-center">
+                <div class="content">
+                  <div class="logo">
+                    <h1>WSD Todo-Task Project</h1>
+                  </div>
+                  <p>An easy way to elicit your task!</p>
+                  <p>Designed By: Himanshu Hunge - hh292</p>
+                  </div>
+              </div>
+            </div>
+            <!-- Form Panel    -->
+            <div class="col-lg-6 bg-white">
+              <div class="form d-flex align-items-center">
+                <div class="content">
+                  <form id="register-form" action="index.php?page=accounts&action=register" method="POST">
+                    <div class="form-group">
+                      <input id="register-username" type="email" name="email" required class="input-material">
+                      <label for="register-username" class="label-material">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-First name" type="First Name" name="fname" required class="input-material">
+                      <label for="register-First name" class="label-material">First Name      </label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-Last name" type="Last Name" name="lname" required class="input-material">
+                      <label for="register-Last name" class="label-material">Last Name      </label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-Phonenumber" type="Phone Number" name="phone" required class="input-material">
+                      <label for="register-Phonenumber" class="label-material">Phone Number        </label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-Birthdate" type="Birthday" name="bday" required class="input-material">
+                      <label for="register-Birthdate" class="label-material">Birthdate        </label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-Gender" type="Gender" name="gender" required class="input-material">
+                      <label for="register-Gender" class="label-material">Gender        </label>
+                    </div>
+                    <div class="form-group">
+                      <input id="register-passowrd" type="password" name="password" required class="input-material">
+                      <label for="register-passowrd" class="label-material">password        </label>
+                    </div>
+                    <div class="form-group terms-conditions">
+                      <input id="license" type="checkbox" class="checkbox-template">
+                      <label for="license">Agree the terms and policy</label>
+                    </div>
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-
-<?php
-//this is how you print something
-//print utility\htmlTable::genarateTableFromMultiArray($data);
-?>
-
-<form action="index.php?page=accounts&action=register" method="POST">
-
-    <div class="container">
-        <label><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required></br></br>
-
-        <label><b>First Name</b></label>
-        <input type="text" placeholder="Enter First Name" name="fname" required></br></br>
-
-        <label><b>Last Name</b></label>
-        <input type="text" placeholder="Enter Last Name" name="lname" required></br></br>
-
-        <label><b>Phone No</b></label>
-        <input type="text" placeholder="Enter Phone number" name="phone" required></br></br>
-
-        <label><b>Birthday</b></label>
-        <input type="text" placeholder="Enter Birthday" name="bday"></br></br>
-
-        <label><b>Gender</b></label>
-        <input type="text" placeholder="Enter Gender" name="gender"></br></br>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required></br></br>
-
-        <button type="submit">Register</button><a href="index.php">Cancel</a></br></br>
-
+                    <input id="register" type="submit" value="Register" class="btn btn-primary">
+                  </form><small>Already have an account? </small><a href="index.php" class="signup">Login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights text-center">
+        <p>Design by <a href="https://remote.com/himanshuhunge" class="external">Himanshu Hunge</a></p>
+        <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+      </div>
     </div>
-
-
-</form>
-
-
-<script src="js/scripts.js"></script>
-</body>
+    <!-- Javascript files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/front.js"></script>
+  </body>
 </html>
