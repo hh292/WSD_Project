@@ -1,63 +1,85 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>WSD Project - Fall2017</title>
-  <link rel="stylesheet" href="style.css">
-  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-<body>
-  <section class="container">
-    <div class="login">
-      <h1>Login to Web Application</h1>
-      <form method="post" action="index.php?page=accounts&action=login">
-        <p><input type="text" name="login" value="" placeholder="Email"></p>
-        <p><input type="password" name="psw" value="" placeholder="Password"></p>
-        <p class="remember_me">
-          <label>
-            <input type="checkbox" name="remember_me" id="remember_me">
-            Remember me on this computer
-          </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="Login"></p>
-      </form>
-    </div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WSD Project - FALL2017</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="favicon.png">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="page login-page">
+      <div class="container d-flex align-items-center">
+        <div class="form-holder has-shadow">
+          <div class="row">
+            <!-- Logo & Information Panel-->
+            <div class="col-lg-6">
+              <div class="info d-flex align-items-center">
+                <div class="content">
+                  <div class="logo">
+                    <h1>WSD Todo-Task Project </h1>
+                  </div>
+                  <p>An easy way to elicit your task!</p>
+                  <p>Designed By: Himanshu Hunge - hh292</p>
+                </div>
+              </div>
+            </div>
+            <!-- Form Panel    -->
+            <div class="col-lg-6 bg-white">
+              <div class="form d-flex align-items-center">
+                <div class="content">
+                  <form id="login-form" action="index.php?page=accounts&action=login" method="post">
+                    <div class="form-group">
+                      <input id="login-username" type="text" name="login" required="" class="input-material">
+                      <label for="login-username" class="label-material">Email</label>
+                    </div>
+                    <div class="form-group">
+                      <input id="login-password" type="password" name="psw" required="" class="input-material">
+                      <label for="login-password" class="label-material">Password</label>
+                    </div>
+                    <p id="login" class="login"><input type="submit" name="commit" value="Login"></p>
+                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                  </form>
 
-<!-- <form action="index.php?page=accounts&action=signup" method="POST"> -->
-    <div class="login-help">
-
-       <form action="index.php?page=accounts&action=signup" method="POST">
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Tasks.com</a>
+                  <form id="login-form" action="index.php?page=accounts&action=signup" method="post">
+                    <div><p class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><p id="login" class="signup"><input type="submit" name="commit" value="Signup"></p></div>
+                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><font color="white">Not a member yet?</font><span class="glyphicon glyphicon-user"></span><button class="btn btn-link navbar-btn" type="submit">Signup</button></li>
-        </ul>
+      </div>
+      <div class="copyrights text-center">
+        <p>Design by <a href="https://remote.com/himanshuhunge" class="external">Himanshu Hunge</a></p>
+        <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+      </div>
     </div>
-</nav>
-</form>
-
-
-    <!--  <h1><a href="index.php?page=accounts&action=signup">Register</a></h1>
-   <!--   <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p> -->
-    </div> 
-  </section>
-
-  <section class="about">
-    <p class="about-links">
-      <a href="http://www.cssflow.com/snippets/login-form" target="_parent">View Article</a>
-      <a href="http://www.cssflow.com/snippets/login-form.zip" target="_parent">Download</a>
-    </p>
-    <p class="about-author">
-      &copy;2017 <a href="https://remote.com/himanshuhunge" target="_blank">Himanshu Hunge</a> -
-      <a href="http://www.cssflow.com/mit-license" target="_blank">NJIT License</a><br>
-      Instructed by <a href="http://informatics.njit.edu/people/kwilliam/" target="_blank">Keith Williams</a>
-  </section>
-</body>
+    <!-- Javascript files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/front.js"></script>
+  </body>
 </html>
