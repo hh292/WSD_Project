@@ -30,28 +30,28 @@ class accountsController extends http\controller
     //you should check the notes on the project posted in moodle for how to use active record here
     //this is to register an account i.e. insert a new account
     public static function register()
-    {
-        //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
-        //USE THE ABOVE TO SEE HOW TO USE Bcrypt
-        $user = accounts::findUserbyUsername($_REQUEST['email']);
-        if ($user == FALSE) {
-            $record = new account();
-            $record->email = $_POST['email'];
-            $record->fname = $_POST['fname'];
-            $record->lname = $_POST['lname'];
-            $record->phone = $_POST['phone'];
-            $record->birthday = $_POST['bday'];
-            $record->gender = $_POST['gender'];
-            //$record->password = $_POST['password'];
-            $record->password = $record->setPassword($_POST['password']);
-            //print_r($record);
-            $record->save();
-            header('Location: index.php');
-        }
-        else{
-            echo 'Sorry. This email is already registered.';
-        }
+{
+    //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
+    //USE THE ABOVE TO SEE HOW TO USE Bcrypt
+    $user = accounts::findUserbyUsername($_REQUEST['email']);
+    if ($user == FALSE) {
+        $record = new account();
+        $record->email = $_POST['email'];
+        $record->fname = $_POST['fname'];
+        $record->lname = $_POST['lname'];
+        $record->phone = $_POST['phone'];
+        $record->birthday = $_POST['bday'];
+        $record->gender = $_POST['gender'];
+        //$record->password = $_POST['password'];
+        $record->password = $record->setPassword($_POST['password']);
+        //print_r($record);
+        $record->save();
+        header('Location: index.php');
     }
+    else{
+        echo 'Sorry! This email is already registered.Please try with new one!';
+    }
+}
     //this is the function to save the user the user profile
     public static function store()
     {
@@ -70,13 +70,42 @@ class accountsController extends http\controller
         $record->gender=$_POST['gender'];
         $record->save();
         session_start();
-        header('Location: index.php?page=accounts&action=myProf');// problem with routing here
+        header('Location: index.php?page=accounts&action=showProf');
+    }
+    public static function edit_profile()
+    {
+        session_start();
+        $record = accounts::findOne($_SESSION['userID']);
+        self::getTemplate('edit_account', $record);
     }
     public static function show_profile()
     {
         session_start();
         $record = accounts::findOne($_SESSION['userID']);
         self::getTemplate('show_account', $record);
+    }
+    public static function editPass()
+    {
+        session_start();
+        $record = accounts::findOne($_SESSION['userID']);
+        self::getTemplate('password_change', $record);
+    }
+    public static function updatePass()
+    {
+        $records = accounts::findOne($_REQUEST['id']);
+        if($records->checkPassword($_POST['currentPass']) == TRUE){
+            if($_POST['newPass1']==$_POST['newPass2']){
+                $record = new account();
+                $record->id=$records->id;
+                $record->password = $record->setPassword($_POST['newPass1']);
+                $record->save();
+                header('Location: index.php?page=accounts&action=showProf');
+            }else{
+                echo 'Passwords do not match.';
+            }
+        }else{
+            echo 'Wrong password entered.';
+        }
     }
     //this is to login, here is where you find the account and allow login or deny.
     public static function login()
@@ -86,7 +115,7 @@ class accountsController extends http\controller
         //then you need to check the password and create the session if the password matches.
         //you might want to add something that handles if the password is invalid, you could add a page template and direct to that
         //after you login you can use the header function to forward the user to a page that displays their tasks.
-        //        $record = accounts::findUser($_POST['login']);
+        //        $record = accounts::findUser($_POST['uname']);
         $record = new account();
         $record = accounts::findUserbyUsername($_POST['login']);
         //$checkpsw = accounts::checkPassword($_POST['psw'],$record->password);
@@ -94,10 +123,10 @@ class accountsController extends http\controller
         //echo '1';
         if ($record == FALSE) {
             //header('Location: index.php');
-            echo 'user not found';
+            print_r("<h1>'Sorry! User not found,Please enter correct Login credentials....!'</h1>");
         } else {
             if($record->checkPassword($_POST['psw']) == TRUE) {
-                echo 'login';
+                //echo 'login';
                 session_start();
                 $_SESSION["userID"] = $record->id;
                 $_SESSION["userEmail"] = $record->email;
@@ -105,7 +134,7 @@ class accountsController extends http\controller
                 header('Location: index.php?page=tasks&action=allOneUser&id='.$record->id);
             } else {
                 //header('Location: index.php');
-                echo 'password does not match';
+                print_r("<h1>'Sorry! You have entered wrong password....!'</h1>");
             }
         }
     }
