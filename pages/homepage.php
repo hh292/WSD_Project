@@ -74,6 +74,22 @@
         <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
       </div>
     </div>
+
+    <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm hidden-xs hidden-sm"><i class="fa fa-cog fa-2x"></i></button>
+    <div id="style-switch" class="collapse">
+      <h4 class="mb-3">Select theme colour</h4>
+      <form class="mb-3">
+        <select name="colour" id="colour" class="form-control">
+          <option value="">select colour variant</option>
+          <option value="default">violet</option>
+          <option value="pink">pink</option>
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="sea">sea</option>
+          <option value="blue">blue</option>
+        </select>
+      </form>
+    </div>
     <!-- Javascript files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
