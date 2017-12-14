@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Material Admin by Bootstrapious.com</title>
+    <title>WSD Project - FALL2017</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -38,7 +38,7 @@
                     <h1>WSD Todo-Task Project</h1>
                   </div>
                   <p>An easy way to elicit your task!</p>
-                  <p>Designed By: Himanshu Hunge - hh292</p>
+                  <p>Designed and Developed By:<b> Himanshu Hunge</b></p>
                   </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
                       <label for="register-Gender" class="label-material">Gender        </label>
                     </div>
                     <div class="form-group">
-                      <input id="register-passowrd" type="password" name="password" required class="input-material">
+                      <input id="register-passowrd" type="password" maxlength="6" name="password" required class="input-material">
                       <label for="register-passowrd" class="label-material">password        </label>
                     </div>
                     <div class="form-group terms-conditions">
